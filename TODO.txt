@@ -1,9 +1,0 @@
-TODO:
-- Add more components in journal (weather, dimension, etc.)
-- Add blacklist to enchanted pocket watch
-
-If I have time:
-- Make some new art for the "fish discovered" toast
-- Make some new art for the angling table GUI
-- Make large fish sprites configurable via fish data
-- Make journal categories configurable
