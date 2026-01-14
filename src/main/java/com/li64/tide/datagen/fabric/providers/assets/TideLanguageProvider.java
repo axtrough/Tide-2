@@ -88,7 +88,7 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("text.autoconfig.tide.option.journal.useAmPm", "Use AM/PM");
         builder.add("text.autoconfig.tide.option.journal.useAmPm.@Tooltip", "Disable to use 24-hour time in the journal and pocket watches (ex. 21:00 vs 9:00 PM)");
         builder.add("text.autoconfig.tide.option.journal.useFahrenheit", "Use Fahrenheit");
-        builder.add("text.autoconfig.tide.option.journal.useFahrenheit.@Tooltip", "Enable to use Fahrenheit instead of Celsius in the journal and thermometers (ex. 0°C vs 32°F)");
+        builder.add("text.autoconfig.tide.option.journal.useFahrenheit.@Tooltip", "Enable to use Fahrenheit instead of Celsius in the journal and climate gauge (ex. 0°C vs 32°F)");
         builder.add("text.autoconfig.tide.option.journal.useRealDate", "Use Real Date");
         builder.add("text.autoconfig.tide.option.journal.useRealDate.@Tooltip", "If enabled, the real date is used in the fishing journal as opposed to the local world day");
 
@@ -162,7 +162,7 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add(TideItems.FISH_SATCHEL, "Fish Satchel");
         builder.add(TideItems.FISHY_NOTE, "Fishy Note");
 
-        builder.add(TideItems.THERMOMETER, "Thermometer");
+        builder.add(TideItems.CLIMATE_GAUGE, "Climate Gauge");
         builder.add(TideItems.POCKET_WATCH, "Pocket Watch");
 
         builder.add(TideItems.ENCHANTED_POCKET_WATCH, "Enchanted Pocket Watch");
@@ -335,7 +335,8 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("item.tide.fish_satchel.desc_1", "Collects fish automatically while open");
         builder.add("item.tide.jelly_torch.desc", "Can be placed underwater");
         builder.add("item.tide.chasm_eel.desc", "Use on a bedrock block to eat it");
-        builder.add("item.tide.thermometer.desc", "Reads biome temperature");
+        builder.add("item.tide.climate_gauge.desc_0.desc", "Reads biome temperature");
+        builder.add("item.tide.climate_gauge.desc_1.desc", "Unaffected by weather or seasonal changes");
         builder.add("item.tide.pocket_watch.desc", "Reads precise time");
         builder.add("item.tide.enchanted_pocket_watch.desc", "Use on a mob to freeze the mob in time");
         builder.add("item.tide.voidseeker.desc", "Sends you to your respawn point when eaten");

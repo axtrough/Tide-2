@@ -90,7 +90,7 @@ public class TideItems {
             /*? if >=1.21*/.component(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of()))
             .stacksTo(1));
 
-    public static final Item THERMOMETER = register("thermometer", ThermometerItem::new);
+    public static final Item CLIMATE_GAUGE = register("climate_gauge", ClimateGaugeItem::new);
     public static final Item POCKET_WATCH = register("pocket_watch", PocketWatchItem::new);
 
     public static final Item ENCHANTED_POCKET_WATCH = register("enchanted_pocket_watch", EnchantedPocketWatchItem::new, new Item.Properties()
@@ -154,7 +154,7 @@ public class TideItems {
 
                     BAIT, LUCKY_BAIT, MAGNETIC_BAIT,
 
-                    THERMOMETER, POCKET_WATCH,
+                    CLIMATE_GAUGE, POCKET_WATCH,
 
                     ENCHANTED_POCKET_WATCH, STARLIGHT_BOW, MIDAS_FISHING_ROD, DRAGONFIN_BOOTS,
 

@@ -19,8 +19,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
-public class ThermometerItem extends SimpleTooltipItem {
-    public ThermometerItem(Properties properties) {
+public class ClimateGaugeItem extends SimpleTooltipItem {
+    public ClimateGaugeItem(Properties properties) {
         super(properties);
     }
 
@@ -40,6 +40,7 @@ public class ThermometerItem extends SimpleTooltipItem {
     @Override
     public void addTooltip(ItemStack stack, Consumer<Component> tooltip) {
         Style gray = Component.empty().getStyle().withColor(ChatFormatting.GRAY);
-        tooltip.accept(Component.translatable("item.tide.thermometer.desc").setStyle(gray));
+        tooltip.accept(Component.translatable("item.tide.climate_gauge.desc_0").setStyle(gray));
+        tooltip.accept(Component.translatable("item.tide.climate_gauge.desc_1").setStyle(gray));
     }
 }

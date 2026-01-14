@@ -219,7 +219,7 @@ public class TideRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy("has_wooden_slab", has(ItemTags.WOODEN_SLABS))
                 .save(output);
 
-        shaped(RecipeCategory.TOOLS, TideItems.THERMOMETER, 1)
+        shaped(RecipeCategory.TOOLS, TideItems.CLIMATE_GAUGE, 1)
                 .pattern(" # ")
                 .pattern("#I#")
                 .pattern("#R#")

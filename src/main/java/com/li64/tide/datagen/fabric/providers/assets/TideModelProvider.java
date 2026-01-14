@@ -68,7 +68,7 @@ public class TideModelProvider extends FabricModelProvider {
         generator.generateFlatItem(TideItems.FISHING_JOURNAL, ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(TideItems.FISHY_NOTE, ModelTemplates.FLAT_ITEM);
 
-        generator.generateFlatItem(TideItems.THERMOMETER, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(TideItems.CLIMATE_GAUGE, ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(TideItems.POCKET_WATCH, ModelTemplates.FLAT_ITEM);
 
         generator.generateFlatItem(TideItems.ENCHANTED_POCKET_WATCH, ModelTemplates.FLAT_ITEM);

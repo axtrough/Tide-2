@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tide:item/thermometer"
+    "layer0": "tide:item/climate_gauge"
   }
 }
