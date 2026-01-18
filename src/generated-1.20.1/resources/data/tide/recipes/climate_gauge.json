@@ -18,7 +18,7 @@
     "#R#"
   ],
   "result": {
-    "item": "tide:thermometer"
+    "item": "tide:climate_gauge"
   },
   "show_notification": true
 }

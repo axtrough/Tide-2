@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tide:thermometer"
+        "recipe": "tide:climate_gauge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tide:thermometer"
+      "tide:climate_gauge"
     ]
   },
   "sends_telemetry_event": false

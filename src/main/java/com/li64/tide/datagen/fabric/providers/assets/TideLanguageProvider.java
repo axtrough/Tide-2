@@ -335,8 +335,8 @@ public class TideLanguageProvider extends FabricLanguageProvider {
         builder.add("item.tide.fish_satchel.desc_1", "Collects fish automatically while open");
         builder.add("item.tide.jelly_torch.desc", "Can be placed underwater");
         builder.add("item.tide.chasm_eel.desc", "Use on a bedrock block to eat it");
-        builder.add("item.tide.climate_gauge.desc_0.desc", "Reads biome temperature");
-        builder.add("item.tide.climate_gauge.desc_1.desc", "Unaffected by weather or seasonal changes");
+        builder.add("item.tide.climate_gauge.desc_0", "Reads biome temperature");
+        builder.add("item.tide.climate_gauge.desc_1", "Unaffected by weather or seasonal changes");
         builder.add("item.tide.pocket_watch.desc", "Reads precise time");
         builder.add("item.tide.enchanted_pocket_watch.desc", "Use on a mob to freeze the mob in time");
         builder.add("item.tide.voidseeker.desc", "Sends you to your respawn point when eaten");

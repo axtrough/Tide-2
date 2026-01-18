@@ -1,3 +1,18 @@
+## Tide v2.0.2 - 1/19/26
+
+---
+### Changes
+- 
+
+---
+### Fixes
+- Fixed a bug where fish could not be used to tame cats on 1.20.1
+- Fixed a NoSuchMethodError crash on Fabric 1.20.1
+- Fixed a server startup crash on Fabric 1.20.1
+- Fixed a server startup crash on Forge 1.20.1
+
+---
+
 ## Tide v2.0.1 - 1/13/26
 
 ---
@@ -18,6 +33,8 @@
 ### Fixes
 - Fixed a crash when reeling in a fishing rod with Valkyrian Skies present
 - Fixed a bug where the Starlight Bow's ammo conservation was applied to other weapons
+
+---
 
 ## Tide v2.0 - Playtest 6
 

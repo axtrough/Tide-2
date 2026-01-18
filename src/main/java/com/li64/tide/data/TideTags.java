@@ -23,6 +23,7 @@ public class TideTags {
         public static final TagKey<Item> LEGENDARY_FISH = TagKey.create(Registries.ITEM, Tide.resource("legendary_fish"));
         public static final TagKey<Item> COOKED_FISH = TagKey.create(Registries.ITEM, Tide.resource("cooked_fish"));
         public static final TagKey<Item> COOKABLE_FISH = TagKey.create(Registries.ITEM, Tide.resource("cookable_fish"));
+        public static final TagKey<Item> CAT_FOOD = TagKey.create(Registries.ITEM, Tide.resource("cat_food"));
         public static final TagKey<Item> FISH = TagKey.create(Registries.ITEM, Tide.resource("fish"));
 
         public static final TagKey<Item> TWILIGHT_ANGLER_EATABLE = TagKey.create(Registries.ITEM, Tide.resource("twilight_angler_eatable"));

@@ -124,6 +124,8 @@ public class TideItemTagsProvider extends FabricTagProvider<Item> {
 
         FabricTagBuilder cookableFishBuilder = getOrCreateTagBuilder(TideTags.Items.COOKABLE_FISH);
         TideFish.COOKABLE_FISH_MAP.values().stream().flatMap(List::stream).forEach(cookableFishBuilder::add);
+        getOrCreateTagBuilder(TideTags.Items.CAT_FOOD).forceAddTag(TideTags.Items.COOKABLE_FISH)
+                .add(Items.SALMON).add(Items.COD);
 
         FabricTagBuilder cookedFishBuilder = getOrCreateTagBuilder(TideTags.Items.COOKED_FISH)
                 .add(Items.COOKED_COD).add(Items.COOKED_SALMON);
