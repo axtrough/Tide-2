@@ -23,11 +23,6 @@ public class FabricPlatform implements LoaderPlatform {
     }
 
     @Override
-    public String getMCVersion() {
-        return FabricLoader.getInstance().getRawGameVersion();
-    }
-
-    @Override
     public boolean isModLoaded(String modId) {
         return FabricLoader.getInstance().isModLoaded(modId);
     }

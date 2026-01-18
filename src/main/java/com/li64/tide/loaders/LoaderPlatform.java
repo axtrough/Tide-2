@@ -13,7 +13,10 @@ import net.minecraft.world.inventory.MenuType;
 public interface LoaderPlatform {
     String getPlatformName();
 
-    String getMCVersion();
+    default String getMCVersion() {
+        /*? if >=1.21 {*/return "1.21.1";
+        /*?} else*//*return "1.20.1";*/
+    }
 
     boolean isModLoaded(String modId);
 

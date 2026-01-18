@@ -1,5 +1,6 @@
 package com.li64.tide.registries.entities.fish;
 
+import com.li64.tide.Tide;
 import com.li64.tide.compat.seasons.SeasonsCompat;
 import com.li64.tide.data.fishing.FishData;
 import com.li64.tide.data.fishing.FishingContext;
@@ -107,8 +108,13 @@ public class TideFishEntity extends AbstractSchoolingFish {
                 level.getMoonPhase(), SeasonsCompat.getSeason(level.getLevel())
         );
 
-        return data.shouldKeep(context) && (data.weight(context) / data.weight()) > 0.1;
-//        Tide.LOG.info("trying to spawn {} at {}, check {}", entityType, pos, success ? "passed" : "failed");
-//        return success;
+        boolean conditionsMatch = data.shouldKeep(context);
+        boolean nonzeroWeight = (data.weight(context) / data.weight()) > 0.1;
+//        String info = "Failed, no conditions or modifiers matched";
+//        if (conditionsMatch && nonzeroWeight) info = "Success!";
+//        if (!conditionsMatch && nonzeroWeight) info = "Failed, conditions didn't match";
+//        if (conditionsMatch && !nonzeroWeight) info = "Failed, modifiers didn't match";
+//        Tide.LOG.info("Trying to spawn tide fish '{}' at {}. {}", entityType, pos, info);
+        return conditionsMatch && nonzeroWeight;
     }
 }

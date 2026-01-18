@@ -13,7 +13,7 @@ public class BuiltInRegistriesMixin {
     //? if fabric {
     @Inject(at = @At(value = "HEAD"), method = "bootStrap")
     private static void bootstrap(CallbackInfo ci) {
-        TideRegistries.init();
+        //TideRegistries.init();
     }
     //?}
 }

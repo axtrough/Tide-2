@@ -8,7 +8,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.HashMap;
 
-public class TideBlockEntities {
+public class
+TideBlockEntities {
     public static final HashMap<String, BlockEntityType<?>> BLOCK_ENTITIES = new HashMap<>();
 
     public static final BlockEntityType<? extends LootCrateBlockEntity> WOODEN_CRATE =

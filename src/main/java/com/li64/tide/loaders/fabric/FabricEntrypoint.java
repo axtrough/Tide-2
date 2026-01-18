@@ -39,6 +39,7 @@ public class FabricEntrypoint implements ModInitializer {
         TideMessages.init(Tide.NETWORK);
         FabricEventHandler.init();
 
+        TideRegistries.init();
         TideItems.init();
         TideBlocks.init();
         TideBlockEntities.init();

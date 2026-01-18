@@ -9,8 +9,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 
 public interface FishingModifierType<T extends FishingModifier> {
-    FishingModifierType<ConditionalModifier> CONDITIONAL = FishingModifierType.register("conditional", ConditionalModifier.CODEC);
-    FishingModifierType<TemperatureModifier> TEMPERATURE = FishingModifierType.register("temperature", TemperatureModifier.CODEC);
+    FishingModifierType<ConditionalModifier> CONDITIONAL = register("conditional", ConditionalModifier.CODEC);
+    FishingModifierType<TemperatureModifier> TEMPERATURE = register("temperature", TemperatureModifier.CODEC);
 
     static void register() {
         Tide.LOG.info("Registering fishing modifiers");
