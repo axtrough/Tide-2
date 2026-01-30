@@ -13,7 +13,7 @@ import net.minecraft.world.entity.EntityType;
 
 import java.util.Optional;
 
-public record DisplayData(ResourceKey<EntityType<?>> entityKey, Optional<CompoundTag> nbt, FishDisplayShape shape, float x, float y, float z, float roll, float pitch, float yaw) {
+public record DisplayData(ResourceKey<EntityType<?>> entityKey, Optional<CompoundTag> nbt, FishDisplayShape shape, float x, float y, float z, float roll, float pitch, float yaw, float lengthCm) {
     public static final Codec<DisplayData> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             ResourceKey.codec(Registries.ENTITY_TYPE).fieldOf("entity").forGetter(DisplayData::entityKey),
             CompoundTag.CODEC.optionalFieldOf("nbt").forGetter(DisplayData::nbt),
@@ -23,7 +23,8 @@ public record DisplayData(ResourceKey<EntityType<?>> entityKey, Optional<Compoun
             Codec.FLOAT.optionalFieldOf("z", 0f).forGetter(DisplayData::z),
             Codec.FLOAT.optionalFieldOf("roll", 0f).forGetter(DisplayData::roll),
             Codec.FLOAT.optionalFieldOf("pitch", 0f).forGetter(DisplayData::pitch),
-            Codec.FLOAT.optionalFieldOf("yaw", 0f).forGetter(DisplayData::yaw)
+            Codec.FLOAT.optionalFieldOf("yaw", 0f).forGetter(DisplayData::yaw),
+            Codec.FLOAT.optionalFieldOf("lengthCm", 0f).forGetter(DisplayData::lengthCm)
     ).apply(instance, DisplayData::new));
 
     public Holder<EntityType<?>> entityHolder() {
@@ -44,6 +45,7 @@ public record DisplayData(ResourceKey<EntityType<?>> entityKey, Optional<Compoun
         private FishDisplayShape shape = FishDisplayShape.SHAPE_1x1;
         private float x, y, z;
         private float roll, pitch, yaw;
+        private float lengthCm = 0f;
 
         private Builder() {}
 
@@ -85,8 +87,13 @@ public record DisplayData(ResourceKey<EntityType<?>> entityKey, Optional<Compoun
             return this;
         }
 
+        public Builder lengthCm(float lengthCm) {
+            this.lengthCm = lengthCm;
+            return this;
+        }
+
         public DisplayData build() {
-            return new DisplayData(this.entityType, Optional.ofNullable(nbt), this.shape, this.x, this.y, this.z, this.roll, this.pitch, this.yaw);
+            return new DisplayData(this.entityType, Optional.ofNullable(nbt), this.shape, this.x, this.y, this.z, this.roll, this.pitch, this.yaw, this.lengthCm);
         }
     }
 }

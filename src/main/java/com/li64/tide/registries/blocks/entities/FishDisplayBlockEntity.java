@@ -2,6 +2,7 @@ package com.li64.tide.registries.blocks.entities;
 
 import com.li64.tide.data.fishing.DisplayData;
 import com.li64.tide.data.fishing.FishData;
+import com.li64.tide.data.item.TideItemData;
 import com.li64.tide.registries.TideBlockEntities;
 import com.li64.tide.registries.blocks.FishDisplayBlock;
 import com.li64.tide.registries.blocks.FishDisplayShape;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-/*? if >=1.21*/import net.minecraft.core.HolderLookup;
+/*? if >=1.21*//*import net.minecraft.core.HolderLookup;*/
 
 public class FishDisplayBlockEntity extends BlockEntity {
     private ItemStack fish;
@@ -44,7 +45,15 @@ public class FishDisplayBlockEntity extends BlockEntity {
         var dataOp = FishData.getExact(stack).flatMap(FishData::display);
         if (dataOp.isEmpty()) return false;
         this.fish = stack;
-        this.displayData = dataOp.get();
+        DisplayData displayData = dataOp.get();
+        double lengthCm = TideItemData.FISH_LENGTH.get(stack);
+
+        this.displayData = new DisplayData(displayData.entityKey(), displayData.nbt(), displayData.shape(),
+                displayData.x(), displayData.y(), displayData.z(),
+                displayData.roll(), displayData.pitch(), displayData.yaw(),
+                (float) lengthCm
+        );
+
         this.updateShape(displayData.shape());
         this.markUpdated();
         return true;
@@ -66,14 +75,20 @@ public class FishDisplayBlockEntity extends BlockEntity {
     }
 
     //? if >=1.21 {
-    @Override
+    /*@Override
     protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
         if (this.fish != null) tag.put("fish", this.fish.save(registries));
     }
 
     @Override
     protected void loadAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
-        if (tag.contains("fish")) ItemStack.parse(registries, tag.get("fish")).ifPresent(this::setDisplayStack);
+        if (tag.contains("fish")) {
+            ItemStack.parse(registries, tag.get("fish")).ifPresent(this::setDisplayStack);
+    } else {
+            this.fish = null;
+            this.displayData = null;
+            this.renderedEntity = null; //should work but not tested
+        }
     }
 
     @Override
@@ -83,9 +98,9 @@ public class FishDisplayBlockEntity extends BlockEntity {
         return tag;
     }
 
-    //?} else {
+    *///?} else {
 
-    /*@Override
+    @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         if (this.fish != null) tag.put("fish", this.fish.save(new CompoundTag()));
     }
@@ -104,7 +119,7 @@ public class FishDisplayBlockEntity extends BlockEntity {
         saveAdditional(tag);
         return tag;
     }
-    *///?}
+    //?}
 
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {

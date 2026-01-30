@@ -32,9 +32,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 //? if >=1.21 {
-import net.minecraft.world.ItemInteractionResult;
+/*import net.minecraft.world.ItemInteractionResult;
 import com.mojang.serialization.MapCodec;
-//?}
+*///?}
 
 import java.util.Map;
 
@@ -146,7 +146,7 @@ public class FishDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 
     //? if >=1.21 {
 
-    @Override
+    /*@Override
     protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return simpleCodec(FishDisplayBlock::new);
     }
@@ -190,9 +190,9 @@ public class FishDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
         return super.getCloneItemStack(level, pos, state);
     }
 
-    //?} else {
+    *///?} else {
 
-    /*@Override
+    @Override
     public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack inHand = player.getItemInHand(hand);
         if (!inHand.isEmpty()) {
@@ -239,5 +239,5 @@ public class FishDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
         }
         return super.getCloneItemStack(level, pos, state);
     }
-    *///?}
+    //?}
 }
